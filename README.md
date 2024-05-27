@@ -32,3 +32,6 @@ See video and for Filezilla FTP client you must create **Site** in **Site Manage
 - **ibrahim778** for USBDisable
 - **teakhanirons** for FTPEverywhere
 - **TheOfficialFloW** for Vitashell code
+
+## PS
+- For this release **License** and **DLC** Refresh are disable. I enable them for the next release
