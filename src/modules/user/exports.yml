@@ -1,0 +1,18 @@
+VitaConnectUser:
+  attributes: 0
+  version:
+    major: 1
+    minor: 0
+  main:
+    start: module_start
+    stop: module_stop
+  modules:
+    VitaConnectUserLibrary:
+      syscall: false
+      functions:
+        - shellUserIsUx0Redirected
+        - shellUserRedirectUx0
+        - shellUserIsUma0Redirected
+        - shellUserRedirectUma0
+        - shellUserMountById
+        - shellUserGetRifVitaKey
