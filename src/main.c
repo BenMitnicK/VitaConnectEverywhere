@@ -40,7 +40,7 @@
 int _newlib_heap_size_user = 128 * 1024 * 1024;
 
 int run, s_mesg, toggle, count = 0, status, run_USB = 0, onPressedFTP = 0;
-char *mountType[4] = {"MEMORY CARD", "GAME CARD", "SD2VITA", "PSVSD"};
+char *mountType[5] = {"MEMORY CARD", "GAME CARD", "SD2VITA", "PSVSD", "UR0"};
 
 char mount_Info[30] = "";
 
@@ -311,7 +311,7 @@ BUTTON_HANDLER(onPressSelect)
 {
 	if(sceKernelGetModel() == SCE_KERNEL_MODEL_VITA){
 		if(!select_WifiUsb){
-			if(count == 3){
+			if(count == 4){
 				count = 0;
 				QuickMenuRebornSetWidgetLabel(BUTTON_SELECT_TEXT, mountType[count]);
 			}else{
