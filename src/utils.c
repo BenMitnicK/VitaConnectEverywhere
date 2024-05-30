@@ -506,6 +506,15 @@ void initUsb() {
 	  sceIncomingDialogOpen(&params);
 	  usbdeviceOFF = 1;
 	}
+  }else if (strcmp(driverType,"UR0") == 0) {
+    if (checkFileExist("sdstor0:int-lp-ign-user")){
+      path = "sdstor0:int-lp-ign-user";
+    }else{
+      utf8_to_utf16((uint8_t *)"ok", params.buttonRightText);
+	  utf8_to_utf16((uint8_t *)"Ho Ho!! UR0 Not Mounted.", params.dialogText);
+	  sceIncomingDialogOpen(&params);
+	  usbdeviceOFF = 1;
+	}
   }
 
   if (!path)
