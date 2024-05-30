@@ -75,7 +75,7 @@
 #define WIFI_TEXTURE			"wifi_texture"
 #define WIFI_TEXTURE_PATH		"ur0:QuickMenuReborn/VitaConnectEverywhere/wifi-logo.png"
 
-extern char *mountType[4];
+extern char *mountType[5];
 extern bool select_WifiUsb;
 extern int run, toggle, count, s_mesg, run_USB, onPressedFTP;
 
