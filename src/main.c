@@ -612,23 +612,25 @@ int __unused module_start(SceSize argc, const void* args) {
 		QuickMenuRebornAssignDefaultCheckBoxRecall(CHECKBOX_SELECT);
 		QuickMenuRebornAssignDefaultCheckBoxSave(CHECKBOX_SELECT);
 		QuickMenuRebornRegisterEventHanlder(CHECKBOX_SELECT, QMR_BUTTON_RELEASE_ID, OnToggleCheckBoxFTPUSB, NULL);
-		
-		QuickMenuRebornRegisterWidget(PLANE_BUTTON_NETWORK, NULL, plane);
-		QuickMenuRebornSetWidgetSize(PLANE_BUTTON_NETWORK, SCE_PLANE_WIDTH, 70, 0, 0);
-		QuickMenuRebornSetWidgetColor(PLANE_BUTTON_NETWORK, 1,1,1,0);
-			
-		QuickMenuRebornRegisterWidget(BUTTON_NETWORK_TEXT, PLANE_BUTTON_NETWORK, text);
-		QuickMenuRebornSetWidgetColor(BUTTON_NETWORK_TEXT, 1,1,1,1);
-		QuickMenuRebornSetWidgetSize(BUTTON_NETWORK_TEXT, 500, 75, 0, 0);
-		QuickMenuRebornSetWidgetPosition(BUTTON_NETWORK_TEXT, -200, 0, 0, 0);
-			
-		QuickMenuRebornRegisterWidget(BUTTON_NETWORK, PLANE_BUTTON_NETWORK, button);
-		QuickMenuRebornSetWidgetSize(BUTTON_NETWORK, 150, 50, 0, 0);
-		QuickMenuRebornSetWidgetColor(BUTTON_NETWORK, 1,1,1,1);
-		QuickMenuRebornRegisterEventHanlder(BUTTON_NETWORK, QMR_BUTTON_RELEASE_ID, onPressNetwork, NULL);
-		QuickMenuRebornSetWidgetLabel(BUTTON_NETWORK, "Select");
-		QuickMenuRebornSetWidgetPosition(BUTTON_NETWORK, 300, 0, 0, 0);
-		QuickMenuRebornAssignOnLoadHandler(OnButtonNetwork, BUTTON_NETWORK);
+
+		if (checkFileExist("sdstor0:uma-lp-act-entire")) {
+			QuickMenuRebornRegisterWidget(PLANE_BUTTON_NETWORK, NULL, plane);
+			QuickMenuRebornSetWidgetSize(PLANE_BUTTON_NETWORK, SCE_PLANE_WIDTH, 70, 0, 0);
+			QuickMenuRebornSetWidgetColor(PLANE_BUTTON_NETWORK, 1,1,1,0);
+				
+			QuickMenuRebornRegisterWidget(BUTTON_NETWORK_TEXT, PLANE_BUTTON_NETWORK, text);
+			QuickMenuRebornSetWidgetColor(BUTTON_NETWORK_TEXT, 1,1,1,1);
+			QuickMenuRebornSetWidgetSize(BUTTON_NETWORK_TEXT, 500, 75, 0, 0);
+			QuickMenuRebornSetWidgetPosition(BUTTON_NETWORK_TEXT, -200, 0, 0, 0);
+				
+			QuickMenuRebornRegisterWidget(BUTTON_NETWORK, PLANE_BUTTON_NETWORK, button);
+			QuickMenuRebornSetWidgetSize(BUTTON_NETWORK, 150, 50, 0, 0);
+			QuickMenuRebornSetWidgetColor(BUTTON_NETWORK, 1,1,1,1);
+			QuickMenuRebornRegisterEventHanlder(BUTTON_NETWORK, QMR_BUTTON_RELEASE_ID, onPressNetwork, NULL);
+			QuickMenuRebornSetWidgetLabel(BUTTON_NETWORK, "Select");
+			QuickMenuRebornSetWidgetPosition(BUTTON_NETWORK, 300, 0, 0, 0);
+			QuickMenuRebornAssignOnLoadHandler(OnButtonNetwork, BUTTON_NETWORK);
+		}
 	}
 	
 	QuickMenuRebornRegisterWidget(PLANE_BUTTON_SELECT, NULL, plane);
